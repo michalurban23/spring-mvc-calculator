@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post">
+    <div><label> First number : <input type="number" name="first_number"/> </label></div>
+    <div><label> Second number: <input type="number" name="second_number"/> </label></div>
+    <div>
+        <label for="operation"> Operation: </label>
+        <select name="operation" id="operation">
+            <option value="+"> + </option>
+            <option value="-"> - </option>
+            <option value="*"> * </option>
+            <option value="/"> / </option>
+        </select>
+    </div>
+    <div><input type="submit" value="Calculate!"/></div>
+    </form>
+    <div th:if="${result} != null" th:text="'Result: ' + ${result}"> </div>
+</body>
+</html>
